@@ -34,13 +34,38 @@
     @media(max-width:800px){.contact{padding-top:58px}.contact-grid{grid-template-columns:1fr;gap:31px;padding-bottom:48px}.contact h2{font-size:clamp(30px,5.4vw,42px)}.contact-detail div{grid-template-columns:90px 1fr}}
     @media(max-width:560px){.contact{padding-top:47px}.contact-grid{gap:27px;padding-bottom:36px}.contact h2{font-size:31px}.contact-lead{font-size:12px;margin-bottom:18px}.contact-detail div{grid-template-columns:72px 1fr;gap:10px;padding:13px 0}.contact-detail dd{font-size:12px}.contact-detail .numbers a{display:block;margin:0}.footer-bottom{padding:17px 0;gap:8px 16px}.footer-logo,.footer-logo img{width:90px}.footer-bottom span:nth-child(2){font-size:9px;max-width:165px;line-height:1.7}.footer-bottom span:last-child{width:100%;text-align:right;font-size:9px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}}
+    /* Video gallery: colors and spacing follow the existing IGIA sections. */
+    .video-gallery{padding:105px 0;background:var(--cream);border-top:1px solid var(--line)}
+    .video-gallery-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+    .video-gallery .section-heading{font-size:clamp(36px,4.4vw,64px);margin:14px 0 0}
+    .video-gallery-head p{max-width:330px;margin:0 0 6px;color:var(--muted);font-size:14px;line-height:2.1}
+    .video-carousel{max-width:1080px;margin-inline:auto}
+    .video-player{position:relative;aspect-ratio:16/9;background:var(--ink);border:1px solid var(--line);overflow:hidden}
+    .video-player iframe{position:absolute;inset:0;display:block;width:100%;height:100%;border:0}
+    .video-caption{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .video-caption h3{margin:0;font-size:17px;font-weight:700}
+    .video-caption a{font-size:12px;color:#805c2e;border-bottom:1px solid var(--gold);white-space:nowrap}
+    .video-caption a:hover{color:var(--ink)}
+    .video-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px}
+    .video-controls[hidden]{display:none}
+    .video-navigation{display:flex;gap:10px}
+    .video-arrow{display:grid;place-items:center;width:46px;height:46px;padding:0;border:1px solid var(--gold);background:transparent;color:var(--ink);cursor:pointer}
+    .video-arrow:hover{background:var(--gold);color:var(--ink)}
+    .video-arrow svg{width:20px;height:20px}
+    .video-pages{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:2px}
+    .video-page{display:grid;place-items:center;width:34px;height:40px;padding:0;border:0;background:transparent;cursor:pointer}
+    .video-page::before{content:'';width:7px;height:7px;border-radius:50%;background:#b9b0a2}
+    .video-page[aria-current="true"]::before{width:22px;border-radius:5px;background:var(--gold)}
+    .video-count{min-width:44px;font-size:12px;color:var(--muted);white-space:nowrap}
+    @media(max-width:800px){.video-gallery{padding:85px 0}.video-gallery-head{display:block}.video-gallery-head p{max-width:600px;margin-top:16px}}
+    @media(max-width:560px){.video-gallery{padding:70px 0}.video-gallery-head{margin-bottom:25px}.video-gallery-head p{font-size:12px}.video-caption{align-items:start;flex-direction:column;gap:8px;padding:16px 0}.video-caption h3{font-size:15px}.video-controls{gap:8px}.video-navigation{gap:6px}.video-arrow{width:44px;height:44px}}
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="گروه گوهر ایرانیان، بازگشت به ابتدای صفحه"><img class="brand-logo" src="assets/igia-wordmark.svg" alt="IGIA Group"></a>
-      <nav class="nav-links" id="main-nav" aria-label="ناوبری اصلی"><a href="#about">درباره ما</a><a href="#laboratory">آزمایشگاه</a><a href="#gemstones">جهان گوهرسنگ</a><a href="#innovation">نوآوری</a><a href="#contact">تماس با ما</a></nav>
+      <nav class="nav-links" id="main-nav" aria-label="ناوبری اصلی"><a href="#about">درباره ما</a><a href="#laboratory">آزمایشگاه</a><a href="#gemstones">جهان گوهرسنگ</a><a href="#videos">گالری ویدیوها</a><a href="#innovation">نوآوری</a><a href="#contact">تماس با ما</a></nav>
       <a class="header-contact" href="tel:+982144942881">ارتباط با ما ↗</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="باز کردن فهرست"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
@@ -55,11 +80,106 @@
     <section class="intro" id="about"><div class="container intro-grid"><div data-reveal><span class="eyebrow">۰۱ / هویت ما</span><h2>اعتبار،<br>درخشش <em>تازه‌ای</em> دارد.</h2><div class="intro-mark"><img src="assets/igia-full-logo.svg" alt="لوگوی کامل گروه توسعه و پیشبرد دانش و صنعت گوهر ایرانیان"></div></div><div class="intro-copy" data-reveal><p>در صنعتی که سنت و تجربه ریشه‌ای عمیق دارند، ما با تکیه بر دانش روز، روش‌های علمی و نگاه آینده‌نگر فعالیت می‌کنیم. گروه گوهر ایرانیان با تمرکز بر گوهرسنگ، فضایی برای پیوند پژوهش، ارزیابی تخصصی و فناوری فراهم کرده است.</p><p>این مجموعه با تکیه بر فعالیت‌های آزمایشگاهی، صدور شناسنامه گوهر و پژوهش‌های علمی، در مسیر توسعهٔ دانش و صنعت گوهرسنگ گام برمی‌دارد.</p><div class="intro-rule"><strong>گروه توسعه و پیشبرد دانش و صنعت گوهر ایرانیان</strong><span class="latin">IGIA</span></div></div></div></section>
     <section class="lab" id="laboratory"><div class="lab-layout"><div class="lab-copy" data-reveal><span class="eyebrow">۰۲ / دقت در جزئیات</span><h2 class="section-heading">هر گوهر،<br>داستانی برای کشف.</h2><p>نگاه علمی به گوهرسنگ، پایهٔ تصمیم‌های مطمئن است. در آزمایشگاه گوهرشناسی، بررسی دقیق و مستند جای حدس و برداشت‌های صرفاً ظاهری را می‌گیرد.</p><div class="lab-list"><article><span class="n">01</span><div><h3>صدور شناسنامه گوهر</h3><p>ارزیابی تخصصی و ثبت ویژگی‌های گوهرسنگ</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></article><article><span class="n">02</span><div><h3>پژوهش و مطالعات علمی</h3><p>توسعهٔ دانش و بررسی روش‌های نوین در این حوزه</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></article><article><span class="n">03</span><div><h3>شماره‌گذاری و خدمات مرتبط</h3><p>فعالیت‌های تخصصی در زنجیرهٔ شناخت و سامان‌دهی گوهرسنگ</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></article></div></div><div class="lab-visual"><img src="assets/gemology-lab.webp" alt="تصویر مفهومی از بررسی گوهرسنگ زیر میکروسکوپ" loading="lazy"></div></div></section>
     <section class="collection" id="gemstones"><div class="container"><div class="collection-head"><div data-reveal><span class="eyebrow">۰۳ / جهان گوهرسنگ</span><h2 class="section-heading">زیباییِ طبیعت،<br>از نزدیک و با نگاهی تازه.</h2></div><p data-reveal>از سنگ خام تا تراشِ درخشان، هر گوهر ترکیبی یگانه از رنگ، ساختار و تاریخ زمین است.</p></div><div class="collection-stage" data-reveal><img src="assets/gemstone-collection.webp" alt="تصویر هنری از مجموعه‌ای از گوهرسنگ‌های خام و تراش‌خورده" loading="lazy"><div class="collection-label"><span>NATURE · SCIENCE · VALUE</span><strong>گستره‌ای از رنگ و امکان</strong></div></div></div></section>
-    <section class="innovation" id="innovation"><img class="innovation-emblem" src="assets/igia-emblem.svg" alt="" aria-hidden="true"><div class="container"><div class="innovation-grid"><div data-reveal><span class="eyebrow">۰۴ / نگاه رو به آینده</span><h2>دانشِ امروز،<br><span class="gold">فناوریِ فردا.</span><span class="latin">THE FUTURE IS PRECISION</span></h2></div><div class="innovation-copy" data-reveal><p>نوآوری برای ما یک شعار نیست؛ رویکردی است برای دقیق‌تر دیدن، بهتر پرسیدن و یافتن راه‌های تازه. از پژوهش‌های علمی تا بهره‌گیری از ابزارهای فناورانه و هوش مصنوعی، مسیر ما ارتقای شناخت و پیشبرد صنعت گوهرسنگ است.</p><div class="innovation-tags"><span>پژوهش علمی</span><span>فناوری</span><span>هوش مصنوعی</span><span>گوهرشناسی</span></div></div></div><div class="innovation-note"><span>دانش و صنعت گوهر ایرانیان</span><span class="latin">IGIA GROUP / IRAN</span></div></div></section>
-    <footer class="contact" id="contact"><div class="container"><div class="contact-grid"><div data-reveal><span class="eyebrow">۰۵ / آغاز یک گفت‌وگو</span><h2>با ما در ارتباط باشید.</h2><p class="contact-lead">برای آشنایی بیشتر با فعالیت‌های مجموعه یا هماهنگی مراجعه، تماس بگیرید.</p><a class="button button--gold" href="tel:+982144942881">تماس با مجموعه <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div><div class="contact-detail" data-reveal><dl><div><dt>نشانی</dt><dd>استان تهران، شهرستان تهران، بخش مرکزی، شهر تهران، سازمان برنامه جنوبی، خیابان نوزدهم شرقی، بلوار شقایق جنوبی، پلاک ۱۴، طبقهٔ ۲، واحد ۶</dd></div><div><dt>کد پستی</dt><dd class="numbers"><bdi dir="ltr">۱۴۸۴۹۴۴۳۶۶</bdi></dd></div><div><dt>تلفن تماس</dt><dd class="numbers"><a href="tel:+982144942881"><bdi dir="ltr">۰۲۱ ۴۴۹۴ ۲۸۸۱</bdi></a><a href="tel:+989224246427"><bdi dir="ltr">+۹۸ ۹۲۲ ۴۲۴ ۶۴۲۷</bdi></a></dd></div></dl></div></div><div class="footer-bottom"><span class="footer-logo"><img src="assets/igia-wordmark.svg" alt="IGIA Group"></span><span>گروه توسعه و پیشبرد دانش و صنعت گوهر ایرانیان</span><span>© ۲۰۲۶ IGIA GROUP</span></div></div></footer>
+    <section class="video-gallery" id="videos" aria-labelledby="videos-title">
+      <div class="container">
+        <div class="video-gallery-head">
+          <div><span class="eyebrow">۰۴ / گالری ویدیوها</span><h2 class="section-heading" id="videos-title">دنیای گوهر، در قاب تصویر.</h2></div>
+          <p>ویدیوهای گروه گوهر ایرانیان را همین‌جا تماشا کنید.</p>
+        </div>
+        <div class="video-carousel" role="region" aria-roledescription="کاروسل" aria-label="ویدیوهای گروه گوهر ایرانیان">
+          <div id="video-slide" role="group" aria-roledescription="اسلاید" aria-label="ویدیو ۱ از ۱">
+            <div class="video-player" id="video-player">
+              <iframe src="https://www.aparat.com/video/video/embed/videohash/vkm2d64/vt/frame" title="گروه گوهر ایرانیان — پخش ویدیو از آپارات" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <h3 id="video-title">گروه گوهر ایرانیان</h3>
+              <a id="video-source" href="https://www.aparat.com/v/vkm2d64" target="_blank" rel="noopener noreferrer">مشاهده در آپارات ↗</a>
+            </div>
+          </div>
+          <div class="video-controls" id="video-controls" hidden>
+            <div class="video-navigation">
+              <button class="video-arrow" id="video-prev" type="button" aria-label="ویدیوی قبلی" aria-controls="video-slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+              <button class="video-arrow" id="video-next" type="button" aria-label="ویدیوی بعدی" aria-controls="video-slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+            </div>
+            <div class="video-pages" id="video-pages" role="group" aria-label="انتخاب ویدیو"></div>
+            <span class="video-count" id="video-count" aria-live="polite" aria-atomic="true">۱ از ۱</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="innovation" id="innovation"><img class="innovation-emblem" src="assets/igia-emblem.svg" alt="" aria-hidden="true"><div class="container"><div class="innovation-grid"><div data-reveal><span class="eyebrow">۰۵ / نگاه رو به آینده</span><h2>دانشِ امروز،<br><span class="gold">فناوریِ فردا.</span><span class="latin">THE FUTURE IS PRECISION</span></h2></div><div class="innovation-copy" data-reveal><p>نوآوری برای ما یک شعار نیست؛ رویکردی است برای دقیق‌تر دیدن، بهتر پرسیدن و یافتن راه‌های تازه. از پژوهش‌های علمی تا بهره‌گیری از ابزارهای فناورانه و هوش مصنوعی، مسیر ما ارتقای شناخت و پیشبرد صنعت گوهرسنگ است.</p><div class="innovation-tags"><span>پژوهش علمی</span><span>فناوری</span><span>هوش مصنوعی</span><span>گوهرشناسی</span></div></div></div><div class="innovation-note"><span>دانش و صنعت گوهر ایرانیان</span><span class="latin">IGIA GROUP / IRAN</span></div></div></section>
+    <footer class="contact" id="contact"><div class="container"><div class="contact-grid"><div data-reveal><span class="eyebrow">۰۶ / آغاز یک گفت‌وگو</span><h2>با ما در ارتباط باشید.</h2><p class="contact-lead">برای آشنایی بیشتر با فعالیت‌های مجموعه یا هماهنگی مراجعه، تماس بگیرید.</p><a class="button button--gold" href="tel:+982144942881">تماس با مجموعه <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div><div class="contact-detail" data-reveal><dl><div><dt>نشانی</dt><dd>استان تهران، شهرستان تهران، بخش مرکزی، شهر تهران، سازمان برنامه جنوبی، خیابان نوزدهم شرقی، بلوار شقایق جنوبی، پلاک ۱۴، طبقهٔ ۲، واحد ۶</dd></div><div><dt>کد پستی</dt><dd class="numbers"><bdi dir="ltr">۱۴۸۴۹۴۴۳۶۶</bdi></dd></div><div><dt>تلفن تماس</dt><dd class="numbers"><a href="tel:+982144942881"><bdi dir="ltr">۰۲۱ ۴۴۹۴ ۲۸۸۱</bdi></a><a href="tel:+989224246427"><bdi dir="ltr">+۹۸ ۹۲۲ ۴۲۴ ۶۴۲۷</bdi></a></dd></div></dl></div></div><div class="footer-bottom"><span class="footer-logo"><img src="assets/igia-wordmark.svg" alt="IGIA Group"></span><span>گروه توسعه و پیشبرد دانش و صنعت گوهر ایرانیان</span><span>© ۲۰۲۶ IGIA GROUP</span></div></div></footer>
   </main>
   <script>
     const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav-links');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));toggle.setAttribute('aria-label',open?'باز کردن فهرست':'بستن فهرست');nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','باز کردن فهرست')}));if('IntersectionObserver'in window&& !matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el))}else{document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('visible'))}
+  </script>
+  <script>
+    // Add future Aparat videos here. Use the ID after /v/ and a display title.
+    // Example entry: { id: 'APARAT_VIDEO_ID', title: 'عنوان ویدیو' }
+    const IGIA_VIDEOS = [
+      { id: 'vkm2d64', title: 'گروه گوهر ایرانیان' }
+    ];
+
+    (() => {
+      const videos = IGIA_VIDEOS.filter(video => /^[a-zA-Z0-9]+$/.test(video.id) && typeof video.title === 'string');
+      if (!videos.length) return;
+      const carousel = document.querySelector('.video-carousel');
+      const player = document.getElementById('video-player');
+      const slide = document.getElementById('video-slide');
+      const title = document.getElementById('video-title');
+      const source = document.getElementById('video-source');
+      const controls = document.getElementById('video-controls');
+      const pages = document.getElementById('video-pages');
+      const count = document.getElementById('video-count');
+      const number = new Intl.NumberFormat('fa-IR', { useGrouping: false });
+      let active = -1;
+      const buttons = videos.map((video, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'video-page';
+        button.setAttribute('aria-label', `ویدیو ${number.format(index + 1)}: ${video.title}`);
+        button.setAttribute('aria-controls', 'video-slide');
+        button.addEventListener('click', () => showVideo(index));
+        pages.appendChild(button);
+        return button;
+      });
+      function showVideo(index) {
+        const next = (index + videos.length) % videos.length;
+        if (next === active) return;
+        active = next;
+        const video = videos[active];
+        const url = `https://www.aparat.com/video/video/embed/videohash/${video.id}/vt/frame`;
+        let frame = player.querySelector('iframe');
+        if (!frame || frame.getAttribute('src') !== url) {
+          // Removing the previous player also stops its video and audio.
+          frame = document.createElement('iframe');
+          frame.src = url;
+          frame.loading = 'lazy';
+          frame.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
+          frame.setAttribute('allowfullscreen', '');
+          player.replaceChildren(frame);
+        }
+        frame.title = `${video.title} — پخش ویدیو از آپارات`;
+        title.textContent = video.title;
+        source.href = `https://www.aparat.com/v/${video.id}`;
+        const position = `${number.format(active + 1)} از ${number.format(videos.length)}`;
+        slide.setAttribute('aria-label', `ویدیو ${position}`);
+        count.textContent = position;
+        buttons.forEach((button, i) => button.setAttribute('aria-current', String(i === active)));
+      }
+      controls.hidden = videos.length < 2;
+      document.getElementById('video-prev').addEventListener('click', () => showVideo(active - 1));
+      document.getElementById('video-next').addEventListener('click', () => showVideo(active + 1));
+      // In this RTL carousel, the left arrow advances and the right arrow goes back.
+      carousel.addEventListener('keydown', event => {
+        if (videos.length < 2 || event.altKey || event.ctrlKey || event.metaKey) return;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          showVideo(active + (event.key === 'ArrowLeft' ? 1 : -1));
+        }
+      });
+      showVideo(0);
+    })();
   </script>
 </body>
 </html>
